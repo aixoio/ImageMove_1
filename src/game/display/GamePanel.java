@@ -1,9 +1,13 @@
 package game.display;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
+
+import game.Game;
+import objects.BaseObject;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -11,12 +15,15 @@ public class GamePanel extends JPanel implements Runnable {
 	private final int FPS;
 	
 	public GamePanel() {
-		this.FPS = 250;
+		this.FPS = 24;
 		
 	}
 	
 	
 	public void startGameLoop() {
+		
+		Game.handler.add(new BaseObject(Game.WIDTH / 2 - 50, Game.HEIGHT / 2 - 50, 100, 100, new Color(0x222222)));
+		
 		this.gameThread = new Thread(this);
 		this.gameThread.setDaemon(false);
 		this.gameThread.start();
@@ -69,6 +76,8 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	private void update() {
 		
+		Game.handler.update();
+		
 	}
 	
 	@Override
@@ -78,6 +87,11 @@ public class GamePanel extends JPanel implements Runnable {
 		
 		Graphics2D g2d = (Graphics2D) g;
 		
+		g2d.setColor(new Color(0xffffff));
+		
+		g2d.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+		
+		Game.handler.draw(g2d);
 		
 	}
 	

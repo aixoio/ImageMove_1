@@ -3,6 +3,7 @@ package game;
 import javax.swing.JFrame;
 
 import game.display.GamePanel;
+import objects.base.ObjectHandler;
 
 public class Game {
 	
@@ -12,7 +13,11 @@ public class Game {
 	public static final int WIDTH = 790;
 	public static final int HEIGHT = 680;
 	
+	public static ObjectHandler handler;
+	
 	public Game(String title) {
+		
+		Game.handler = new ObjectHandler();
 		
 		this.frame = new JFrame();
 		this.gamePanel = new GamePanel();
