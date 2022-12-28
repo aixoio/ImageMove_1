@@ -1,6 +1,6 @@
-package objects;
+package objects.base;
 
-public abstract class Object {
+public abstract class GameObject {
 
 	private float x;
 	private float y;

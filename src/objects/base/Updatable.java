@@ -1,4 +1,4 @@
-package objects;
+package objects.base;
 
 public interface Updatable {
 	

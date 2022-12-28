@@ -1,4 +1,4 @@
-package objects;
+package objects.base;
 
 import java.awt.Graphics2D;
 
