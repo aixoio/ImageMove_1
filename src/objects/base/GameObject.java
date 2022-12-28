@@ -1,5 +1,8 @@
 package objects.base;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+
 public abstract class GameObject implements Updatable, Drawable {
 
 	private float x;
@@ -8,7 +11,35 @@ public abstract class GameObject implements Updatable, Drawable {
 	private float width;
 	private float height;
 	
+	private Color color;
 	
+	
+	
+	@Override
+	public void draw(Graphics2D g2d) {
+		
+		g2d.setColor(this.color);
+		g2d.fillRect((int) this.x, (int) this.y, (int) this.width, (int) this.height);
+		
+	}
+	
+	
+	
+	
+	
+	public GameObject(float x, float y, float width, float height, Color color) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		this.color = color;
+	}
+
+
+
+
+
 	public float getX() {
 		return x;
 	}
@@ -32,6 +63,16 @@ public abstract class GameObject implements Updatable, Drawable {
 	}
 	public void setHeight(float height) {
 		this.height = height;
+	}
+
+
+	public Color getColor() {
+		return color;
+	}
+
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
 	
 	
