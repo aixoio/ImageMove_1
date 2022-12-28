@@ -7,7 +7,6 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import game.Game;
-import objects.BaseObject;
 
 public class GamePanel extends JPanel implements Runnable {
 
