@@ -5,13 +5,13 @@ import java.awt.Graphics2D;
 
 public abstract class GameObject implements Updatable, Drawable {
 
-	private float x;
-	private float y;
+	protected float x;
+	protected float y;
 	
-	private float width;
-	private float height;
+	protected float width;
+	protected float height;
 	
-	private Color color;
+	protected Color color;
 	
 	
 	
