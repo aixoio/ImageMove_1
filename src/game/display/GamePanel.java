@@ -11,6 +11,10 @@ import objects.BaseObject;
 
 public class GamePanel extends JPanel implements Runnable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8373489340706149382L;
 	private Thread gameThread;
 	private final int FPS;
 	
