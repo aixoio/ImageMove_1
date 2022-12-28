@@ -1,6 +1,6 @@
 package objects.base;
 
-public abstract class GameObject {
+public abstract class GameObject implements Updatable, Drawable {
 
 	private float x;
 	private float y;
