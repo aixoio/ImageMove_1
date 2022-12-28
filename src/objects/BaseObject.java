@@ -26,9 +26,33 @@ public class BaseObject extends GameObject {
 		this.x += this.xv;
 		this.y += this.yv;
 		
+		
 		byte dir = (byte) (this.random.nextInt(4));
 		
 		final float SPEED = 1;
+		
+		switch (dir) {
+		
+			case 0: // Up
+				this.yv -= SPEED;
+				break;
+				
+			case 1: // Down
+				this.yv += SPEED;
+				break;
+				
+			case 2: // Left
+				this.xv -= SPEED;
+				break;
+				
+			case 3: // Right
+				this.xv += SPEED;
+				break;
+				
+		}
+		
+		dir = (byte) (this.random.nextInt(4));
+		
 		
 		switch (dir) {
 		

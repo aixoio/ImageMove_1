@@ -1,8 +1,12 @@
 package game;
 
+import java.awt.Color;
+import java.util.Random;
+
 import javax.swing.JFrame;
 
 import game.display.GamePanel;
+import objects.BaseObject;
 import objects.base.ObjectHandler;
 
 public class Game {
@@ -10,8 +14,8 @@ public class Game {
 	private JFrame frame;
 	private GamePanel gamePanel;
 	
-	public static final int WIDTH = 790;
-	public static final int HEIGHT = 680;
+	public static final int WIDTH = 747;
+	public static final int HEIGHT = 747;
 	
 	public static ObjectHandler handler;
 	
@@ -59,6 +63,19 @@ public class Game {
 		} else {
 			return var;
 		}
+	}
+	
+	public static void genObjects(int total) {
+		
+		Random random = new Random();
+		
+		for (int i = 0; i < total; i++) {
+			
+			Game.handler.add(new BaseObject(random.nextInt(Game.WIDTH), random.nextInt(Game.HEIGHT), random.nextInt(250), random.nextInt(250), new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256))));
+			
+		}
+		
+		
 	}
 
 }

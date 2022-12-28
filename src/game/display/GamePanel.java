@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	public void startGameLoop() {
 		
-		Game.handler.add(new BaseObject(Game.WIDTH / 2 - 50, Game.HEIGHT / 2 - 50, 100, 100, new Color(0x222222)));
+		Game.genObjects(250);
 		
 		this.gameThread = new Thread(this);
 		this.gameThread.setDaemon(false);
